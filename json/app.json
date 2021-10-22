@@ -1,0 +1,32 @@
+{
+  "slider": [
+    {
+      "image": "l2.jpg"
+    },
+    {
+      "image": "l3.jpg"
+    },
+    {
+      "image": "l4.jpg"
+    },
+    {
+      "image": "f1.jpg"
+    },
+    {
+      "image": "f2.jpg"
+    },
+    {
+      "image": "f3.jpg"
+    },
+    {
+      "image": "p1.jpg"
+    }
+  ],
+  "company": {
+    "name": "Kopi Batu",
+    "logo": "https://via.placeholder.com/400x400?text=LOGO",
+    "email": "kopibatu@gmail.com",
+    "address": "Jalan Kilimanjaro no 25, Batu",
+    "open": "Setiap Hari 08.00-21.00"
+  }
+}

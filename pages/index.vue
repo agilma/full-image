@@ -5,37 +5,25 @@
         <b-carousel id="carousel1"
           :interval="4000"
         >
-        <b-carousel-slide v-for="image in lefttop" :key="image.id" v-bind:img-src="image">
-        </b-carousel-slide>
+          <b-carousel-slide 
+            v-for="(img,i) in data.slider" 
+            :key="i" 
+            v-bind:img-src="img.image"
+          />
         </b-carousel>
-      </b-col>
-      <b-col>
-        <b-card-img colspan="2" class="right" src="P1.jpg"/>
-      </b-col>
-    </b-row>
-
-    <b-row>
-      <b-col>
-         <b-carousel id="carousel1"
-          :interval="4000"
-        >
-        <b-carousel-slide v-for="image in leftbottom" :key="image.id" v-bind:img-src="image">
-        </b-carousel-slide>
-        </b-carousel>
-      </b-col>
-      <b-col>
       </b-col>
     </b-row>
   
     <div class="footer">
-        <b-row>
+        <b-row class="py-3 align-items-center">
           <b-col class="text-right">
-            <b-card-img class="logo" :src="logo"/>
+            <b-card-img class="logo" :src="data.company.logo"/>
           </b-col>
           <b-col class="about">
-            <b>{{web}}</b>
-            <br>{{alamat}}
-            <br> {{jam}}
+            <p class="title mb-1">{{ data.company.name }}</p>
+            <p class="content mb-0">{{ data.company.email }}</p>
+            <p class="content mb-0">{{ data.company.address }}</p>
+            <p class="content mb-0">{{ data.company.open }}</p>
           </b-col>     
         </b-row>
     </div>
@@ -47,18 +35,15 @@
 export default {
   data () {
     return {
-      lefttop: [ 'l2.jpg', 'l3.jpg' , 'l4.jpg'],
-      leftbottom : ['f1.jpg','f2.png','f3.jpg'],
-      logo : ['logo.png'],
-      web: 'Kopibatu@gmail.com',
-      alamat : 'Jalan Kilimanjaro no 25, Batu',
-      jam : 'Setiap Hari 08.00-21.00'
+      data: require('~/json/app.json'),
     }
   }, 
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Raleway:wght@300&display=swap');
+
 .body{
   overflow: hidden;
   background: black;
@@ -72,11 +57,10 @@ export default {
 }
 .footer{
   position: fixed;
-  height: 100px;
+  height: 120px;
   bottom: 0;
   width: 100%;
-  background: rgb(53, 50, 50);
-  padding-top: 0.5%;
+  background: rgba(30, 29, 29, .27);
 }
 .logo{
   width: 75px;
@@ -85,5 +69,14 @@ export default {
 .about{
   font-size: medium;
   color:white;
+}
+.title {
+  font-family: 'Noto Sans Mono', monospace;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.content {
+  font-family: 'Raleway', sans-serif;
+  font-size: .9rem;
 }
 </style>
